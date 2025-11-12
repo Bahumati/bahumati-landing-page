@@ -45,7 +45,7 @@ export default function UniqueFeatures() {
           {/* Gift a Future Card (Wider) */}
           <div className="lg:col-span-2 bg-white text-gray-800 rounded-2xl shadow-lg min-h-[320px] md:h-80 flex flex-col md:flex-row items-center p-0 overflow-hidden">
             <div className="w-full md:w-1/2 z-10 p-6 md:p-8 text-center md:text-left">
-              <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4">Gith The Indias Growth to Your Loved Little Ones</h3>
+              <h3 className="text-xl md:text-2xl font-bold mb-3 md:mb-4">Gift The Indias Growth to Your Loved Little Ones</h3>
               <p className="text-sm md:text-base text-gray-600 mb-4 md:mb-6">
                 Start their journey with the gift of Bahumati digital units. Invest in their future with top 50 indian companies or gold units, meaningful, and timeless.
               </p>
