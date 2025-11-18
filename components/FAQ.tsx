@@ -120,7 +120,7 @@ const faqData: FaqData = {
     {
       question: "How long do transactions take to process?",
       answer:
-        "Most transactions, including self-gifting and gifting, are processed in stantly or within a few business hours.",
+        "Most transactions, including self-gifting and gifting, are processed instantly or within a few business hours.",
     },
   ],
   "Security & Services": [
