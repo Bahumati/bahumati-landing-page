@@ -10,7 +10,7 @@ export default function Navbar() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <a href="#" className="flex-shrink-0">
+          <a href="/" className="flex-shrink-0">
             <img
               src="logo.png"
               alt="Bahumathi Logo"
@@ -30,10 +30,10 @@ export default function Navbar() {
             {/* <a href="#resources" className="text-gray-700 hover:text-indigo-600 px-2 xl:px-3 py-2 text-xs xl:text-sm font-medium transition-colors">
               RESOURCES
             </a> */}
-            <a href="#contact" className="text-gray-700 hover:text-indigo-600 px-2 xl:px-3 py-2 text-xs xl:text-sm font-medium transition-colors">
+            <a href="/contact-us" className="text-gray-700 hover:text-indigo-600 px-2 xl:px-3 py-2 text-xs xl:text-sm font-medium transition-colors">
               CONTACT
             </a>
-            
+
             {/* Language Selector */}
             {/* <div className="relative">
               <button className="flex items-center text-gray-700 hover:text-indigo-600 text-sm font-medium transition-colors">
@@ -48,17 +48,17 @@ export default function Navbar() {
                   </svg>
               </button>
             </div> */}
-            
+
             {/* Vertical Divider */}
             <div className="h-8 border-l border-gray-300"></div>
-            
+
             {/* CTA Button */}
             <button className="bg-indigo-600 hover:bg-indigo-700 text-white px-3 xl:px-4 py-2 rounded-lg font-medium transition-colors flex items-center text-xs xl:text-sm">
-            <img
-              src="gift.png"
-              alt="gift icon"
-              className="h-4 xl:h-5 w-auto mr-1 xl:mr-2"
-            />
+              <img
+                src="gift.png"
+                alt="gift icon"
+                className="h-4 xl:h-5 w-auto mr-1 xl:mr-2"
+              />
               Coming Soon
             </button>
           </div>
@@ -93,10 +93,10 @@ export default function Navbar() {
               <a href="#resources" className="text-gray-700 hover:text-indigo-600 block px-3 py-2 rounded-md text-base font-medium">
                 RESOURCES
               </a> */}
-              <a href="#contact" className="text-gray-700 hover:text-indigo-600 block px-3 py-2 rounded-md text-base font-medium">
+              <a href="/contact-us" className="text-gray-700 hover:text-indigo-600 block px-3 py-2 rounded-md text-base font-medium">
                 CONTACT
               </a>
-               {/* <div className="border-t border-gray-200 pt-4 mt-2">
+              {/* <div className="border-t border-gray-200 pt-4 mt-2">
                  <div className="flex items-center px-3 py-2">
                  <img
               src="language.png"
@@ -108,11 +108,11 @@ export default function Navbar() {
                </div> */}
               <div className="pt-2">
                 <button className="w-full bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2 rounded-lg font-medium transition-colors flex items-center justify-center">
-                <img
-              src="gift.png"
-              alt="gift icon"
-              className="h-5 w-auto mr-2"
-            />
+                  <img
+                    src="gift.png"
+                    alt="gift icon"
+                    className="h-5 w-auto mr-2"
+                  />
                   Coming Soon
                 </button>
               </div>

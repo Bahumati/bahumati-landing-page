@@ -7,7 +7,7 @@ const footerLinks = {
     { name: 'About Us', href: '#' },
     { name: 'Features', href: '#' },
     { name: 'Blog', href: '#' },
-    { name: 'Contact', href: '#' },
+    { name: 'Contact', href: '/contact-us' },
     { name: 'Careers', href: '#' }
   ],
   gifting: [
@@ -24,16 +24,15 @@ const footerLinks = {
     { name: 'Investment FAQs', href: '#' }
   ],
   legal: [
-    { name: 'Terms & Conditions', href: '#' },
-    { name: 'Privacy Policy', href: '#' },
-    { name: 'Refund Policy', href: '#' },
-    { name: 'Security Practices', href: '#' }
+    { name: 'Terms & Conditions', href: '/terms-conditions' },
+    { name: 'Privacy Policy', href: '/privacy-policy' },
+    { name: 'Refund Policy', href: '/refund-policy' },
   ],
   others: [
-      { name: 'Contact Support', href: '#' },
-      { name: 'Careers', href: '#' },
-      { name: 'Report a Vulnerability', href: '#' },
-      { name: 'Press', href: '#' }
+    { name: 'Contact Support', href: '#' },
+    { name: 'Careers', href: '#' },
+    { name: 'Report a Vulnerability', href: '#' },
+    { name: 'Press', href: '#' }
   ]
 };
 
@@ -126,8 +125,8 @@ export default function Footer() {
             </div>
           </div> */}
 
-           {/* Column 1: Others */}
-           {/* <div className="mt-8">
+          {/* Column 1: Others */}
+          {/* <div className="mt-8">
             <h3 className="text-sm font-semibold text-gray-900 tracking-wider uppercase mb-4">Others</h3>
             <ul className="space-y-3">
               {footerLinks.others.map((link) => (
@@ -140,8 +139,8 @@ export default function Footer() {
             </ul>
           </div> */}
 
-           {/* Column 2: Connect with us */}
-           {/* <div className="mt-8">
+          {/* Column 2: Connect with us */}
+          {/* <div className="mt-8">
             <h3 className="text-sm font-semibold text-gray-900 tracking-wider uppercase mb-4">Connect with us</h3>
             <div className="flex space-x-4">
                 <a href="#" className="text-gray-400 hover:text-gray-500">
