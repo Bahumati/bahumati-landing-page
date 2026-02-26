@@ -10,6 +10,7 @@ type Step = 'terms' | 'phone' | 'otp' | 'done' | 'error'
 
 export default function DeleteAccountPolicy() {
   const [step, setStep] = useState<Step>('terms')
+  const [showConfirmDialog, setShowConfirmDialog] = useState(false)
   const [number, setNumber] = useState('')
   const [otp, setOtp] = useState('')
   const [loading, setLoading] = useState(false)
@@ -151,11 +152,48 @@ export default function DeleteAccountPolicy() {
           {step === 'terms' && (
             <button
               type="button"
-              onClick={() => setStep('phone')}
+              onClick={() => setShowConfirmDialog(true)}
               className="bg-red-600 hover:bg-red-700 text-white font-medium px-6 py-3 rounded-lg transition-colors"
             >
               Permanently delete account
             </button>
+          )}
+
+          {/* Confirmation dialog: only after confirming can user proceed to phone/OTP */}
+          {showConfirmDialog && (
+            <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50" onClick={() => setShowConfirmDialog(false)}>
+              <div className="bg-white rounded-xl shadow-xl max-w-md w-full p-6 text-left" onClick={(e) => e.stopPropagation()}>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">Delete your account?</h3>
+                <p className="text-gray-600 text-sm mb-4">
+                  This will <strong>permanently delete</strong> all your account details including:
+                </p>
+                <ul className="list-disc pl-5 text-gray-600 text-sm mb-6 space-y-1">
+                  <li>Profile, name, photo &amp; preferences</li>
+                  <li>Gifts, portfolio &amp; transaction history</li>
+                  <li>Chats &amp; conversations</li>
+                  <li>KYC &amp; bank details</li>
+                </ul>
+                <p className="text-gray-600 text-sm mb-6">
+                  This action <strong>cannot be undone</strong>. Only press confirm if you are sure.
+                </p>
+                <div className="flex gap-3 justify-end">
+                  <button
+                    type="button"
+                    onClick={() => setShowConfirmDialog(false)}
+                    className="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 font-medium hover:bg-gray-50"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => { setShowConfirmDialog(false); setStep('phone'); }}
+                    className="px-4 py-2 bg-red-600 hover:bg-red-700 text-white font-medium rounded-lg"
+                  >
+                    Yes, delete my account
+                  </button>
+                </div>
+              </div>
+            </div>
           )}
 
           {step === 'phone' && (
@@ -166,13 +204,13 @@ export default function DeleteAccountPolicy() {
                 value={number}
                 onChange={(e) => setNumber(e.target.value.replace(/\D/g, '').slice(0, 15))}
                 placeholder="10-digit mobile number"
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-red-500 focus:border-red-500"
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-red-500 focus:border-red-500 text-gray-900 placeholder:text-gray-400"
               />
               {error && <p className="text-sm text-red-600">{error}</p>}
               <div className="flex gap-2">
                 <button
                   type="button"
-                  onClick={() => { setStep('terms'); setError(''); setNumber(''); }}
+                  onClick={() => { setStep('terms'); setError(''); setNumber(''); setShowConfirmDialog(false); }}
                   className="px-4 py-2 border border-gray-300 rounded-md text-gray-700 hover:bg-gray-50"
                 >
                   Cancel
@@ -200,7 +238,7 @@ export default function DeleteAccountPolicy() {
                 value={otp}
                 onChange={(e) => setOtp(e.target.value.replace(/\D/g, '').slice(0, 4))}
                 placeholder="4-digit OTP"
-                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-red-500 focus:border-red-500"
+                className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-red-500 focus:border-red-500 text-gray-900 placeholder:text-gray-400"
               />
               {error && <p className="text-sm text-red-600">{error}</p>}
               <div className="flex gap-2">
