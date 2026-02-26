@@ -11,6 +11,7 @@ type Step = 'terms' | 'phone' | 'otp' | 'done' | 'error'
 export default function DeleteAccountPolicy() {
   const [step, setStep] = useState<Step>('terms')
   const [showConfirmDialog, setShowConfirmDialog] = useState(false)
+  const [showFinalConfirmDialog, setShowFinalConfirmDialog] = useState(false)
   const [number, setNumber] = useState('')
   const [otp, setOtp] = useState('')
   const [loading, setLoading] = useState(false)
@@ -251,12 +252,40 @@ export default function DeleteAccountPolicy() {
                 </button>
                 <button
                   type="button"
-                  onClick={verifyAndDelete}
+                  onClick={() => otp.length === 4 ? setShowFinalConfirmDialog(true) : setError('Enter the 4-digit OTP')}
                   disabled={loading}
                   className="bg-red-600 hover:bg-red-700 disabled:opacity-50 text-white font-medium px-4 py-2 rounded-md"
                 >
                   {loading ? 'Deleting…' : 'Verify & delete account'}
                 </button>
+              </div>
+            </div>
+          )}
+
+          {/* Final confirmation after OTP: only then call delete API */}
+          {showFinalConfirmDialog && (
+            <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/50" onClick={() => setShowFinalConfirmDialog(false)}>
+              <div className="bg-white rounded-xl shadow-xl max-w-md w-full p-6 text-left" onClick={(e) => e.stopPropagation()}>
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">Permanently delete your account?</h3>
+                <p className="text-gray-600 text-sm mb-6">
+                  This will <strong>permanently delete</strong> all your account data. This action <strong>cannot be undone</strong>. Only your verified number can delete this account. Confirm to proceed.
+                </p>
+                <div className="flex gap-3 justify-end">
+                  <button
+                    type="button"
+                    onClick={() => setShowFinalConfirmDialog(false)}
+                    className="px-4 py-2 border border-gray-300 rounded-lg text-gray-700 font-medium hover:bg-gray-50"
+                  >
+                    Cancel
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => { setShowFinalConfirmDialog(false); verifyAndDelete(); }}
+                    className="px-4 py-2 bg-red-600 hover:bg-red-700 text-white font-medium rounded-lg"
+                  >
+                    Confirm, delete my account
+                  </button>
+                </div>
               </div>
             </div>
           )}
