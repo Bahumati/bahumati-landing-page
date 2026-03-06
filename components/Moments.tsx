@@ -32,7 +32,7 @@ export default function Moments() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-          <span className="text-indigo-600">Moments</span> Deserve More Than
+            <span className="text-indigo-600">Moments</span> Deserve More Than
             <br />
             Just Beautiful <span className="text-indigo-600">Wishes</span>
           </h2>
@@ -72,12 +72,12 @@ export default function Moments() {
         </div>
 
         {/* Reviews Section */}
-        <div className="flex justify-center items-center gap-4 mt-12">
+        {/* <div className="flex justify-center items-center gap-4 mt-12">
           <img src="reviews.png" alt="User reviews" className="h-12" />
           <p className="font-semibold text-gray-700">
             Trusted by <span className="text-indigo-600">1 Lakh+</span> Indians
           </p>
-        </div>
+        </div> */}
       </div>
     </section>
   );
