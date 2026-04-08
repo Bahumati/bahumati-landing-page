@@ -1,9 +1,11 @@
 'use client'
 
 import { useState } from 'react'
+import { useAuth } from '@/lib/auth'
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+  const { user, logout, isAuthenticated } = useAuth()
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
@@ -20,47 +22,42 @@ export default function Navbar() {
 
           {/* Right-aligned group for desktop */}
           <div className="hidden lg:flex items-center space-x-4 xl:space-x-6">
-            {/* Desktop Navigation Links */}
-            {/* <a href="#about" className="text-gray-700 hover:text-indigo-600 px-2 xl:px-3 py-2 text-xs xl:text-sm font-medium transition-colors">
-              ABOUT US
-            </a> */}
-            {/* <a href="#features" className="text-gray-700 hover:text-indigo-600 px-2 xl:px-3 py-2 text-xs xl:text-sm font-medium transition-colors">
-              FEATURES
-            </a> */}
-            {/* <a href="#resources" className="text-gray-700 hover:text-indigo-600 px-2 xl:px-3 py-2 text-xs xl:text-sm font-medium transition-colors">
-              RESOURCES
-            </a> */}
             <a href="/contact-us" className="text-gray-700 hover:text-indigo-600 px-2 xl:px-3 py-2 text-xs xl:text-sm font-medium transition-colors">
               CONTACT
             </a>
 
-            {/* Language Selector */}
-            {/* <div className="relative">
-              <button className="flex items-center text-gray-700 hover:text-indigo-600 text-sm font-medium transition-colors">
-              <img
-              src="language.png"
-              alt="language icon"
-              className="h-5 w-auto mr-2"
-            />
-                  ENG
-                  <svg className="h-4 w-4 ml-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
-              </button>
-            </div> */}
-
-            {/* Vertical Divider */}
             <div className="h-8 border-l border-gray-300"></div>
 
-            {/* CTA Button */}
-            <button className="bg-indigo-600 hover:bg-indigo-700 text-white px-3 xl:px-4 py-2 rounded-lg font-medium transition-colors flex items-center text-xs xl:text-sm">
-              <img
-                src="gift.png"
-                alt="gift icon"
-                className="h-4 xl:h-5 w-auto mr-1 xl:mr-2"
-              />
-              Coming Soon
-            </button>
+            {/* CTA Buttons */}
+            <a href="/gift" className="bg-indigo-600 hover:bg-indigo-700 text-white px-3 xl:px-4 py-2 rounded-lg font-medium transition-colors flex items-center text-xs xl:text-sm">
+              <img src="gift.png" alt="gift icon" className="h-4 xl:h-5 w-auto mr-1 xl:mr-2" />
+              Gift
+            </a>
+            <a href="/selfgift" className="bg-white hover:bg-gray-50 text-indigo-600 border border-indigo-200 px-3 xl:px-4 py-2 rounded-lg font-medium transition-colors flex items-center text-xs xl:text-sm">
+              Self Gift
+            </a>
+
+            {/* User avatar + logout (shown when logged in) */}
+            {isAuthenticated && user && (
+              <>
+                <div className="h-8 border-l border-gray-300"></div>
+                <div className="flex items-center gap-2">
+                  <div className="h-8 w-8 rounded-full bg-indigo-100 flex items-center justify-center text-xs font-bold text-indigo-600 select-none">
+                    {user.name?.charAt(0).toUpperCase() || '?'}
+                  </div>
+                  <span className="text-xs xl:text-sm font-medium text-gray-700 max-w-[80px] truncate">
+                    {user.name?.split(' ')[0]}
+                  </span>
+                  <button
+                    onClick={logout}
+                    className="text-xs xl:text-sm font-medium text-gray-400 hover:text-red-500 transition-colors px-1"
+                    title="Sign out"
+                  >
+                    Sign out
+                  </button>
+                </div>
+              </>
+            )}
           </div>
 
           {/* Mobile menu button */}
@@ -84,37 +81,35 @@ export default function Navbar() {
         {isMenuOpen && (
           <div className="lg:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-100">
-              {/* <a href="#about" className="text-gray-700 hover:text-indigo-600 block px-3 py-2 rounded-md text-base font-medium">
-                ABOUT US
-              </a>
-              <a href="#features" className="text-gray-700 hover:text-indigo-600 block px-3 py-2 rounded-md text-base font-medium">
-                FEATURES
-              </a>
-              <a href="#resources" className="text-gray-700 hover:text-indigo-600 block px-3 py-2 rounded-md text-base font-medium">
-                RESOURCES
-              </a> */}
               <a href="/contact-us" className="text-gray-700 hover:text-indigo-600 block px-3 py-2 rounded-md text-base font-medium">
                 CONTACT
               </a>
-              {/* <div className="border-t border-gray-200 pt-4 mt-2">
-                 <div className="flex items-center px-3 py-2">
-                 <img
-              src="language.png"
-              alt="language icon"
-              className="h-5 w-auto mr-2"
-            />
-                    <span className="text-gray-700 font-medium">ENG</span>
-                 </div>
-               </div> */}
-              <div className="pt-2">
-                <button className="w-full bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2 rounded-lg font-medium transition-colors flex items-center justify-center">
-                  <img
-                    src="gift.png"
-                    alt="gift icon"
-                    className="h-5 w-auto mr-2"
-                  />
-                  Coming Soon
-                </button>
+              <div className="pt-2 space-y-2">
+                <a href="/gift" className="w-full bg-indigo-600 hover:bg-indigo-700 text-white px-6 py-2 rounded-lg font-medium transition-colors flex items-center justify-center">
+                  <img src="gift.png" alt="gift icon" className="h-5 w-auto mr-2" />
+                  Gift
+                </a>
+                <a href="/selfgift" className="w-full bg-white hover:bg-gray-50 text-indigo-600 border border-indigo-200 px-6 py-2 rounded-lg font-medium transition-colors flex items-center justify-center">
+                  Self Gift
+                </a>
+
+                {/* Logged-in user row on mobile */}
+                {isAuthenticated && user && (
+                  <div className="flex items-center justify-between px-3 py-2 border-t border-gray-100 mt-2 pt-3">
+                    <div className="flex items-center gap-2">
+                      <div className="h-8 w-8 rounded-full bg-indigo-100 flex items-center justify-center text-sm font-bold text-indigo-600">
+                        {user.name?.charAt(0).toUpperCase() || '?'}
+                      </div>
+                      <span className="text-sm font-medium text-gray-700">{user.name?.split(' ')[0]}</span>
+                    </div>
+                    <button
+                      onClick={logout}
+                      className="text-sm font-medium text-red-400 hover:text-red-600 transition-colors"
+                    >
+                      Sign out
+                    </button>
+                  </div>
+                )}
               </div>
             </div>
           </div>
