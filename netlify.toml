@@ -1,0 +1,10 @@
+[build]
+  command = "npm run build"
+  publish = ".next"
+
+[build.environment]
+  NEXT_PUBLIC_GIFTING_URL = "https://gift.bahumati.in"
+  NEXT_PUBLIC_API_URL = "https://server.bahumati.in/api/v1"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
