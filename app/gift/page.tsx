@@ -4,7 +4,7 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { useRouter } from 'next/navigation';
 import { useRequireAuth } from '@/lib/auth';
 import { searchUsers, getRecentContacts, getSuggestedContacts } from '@/lib/api';
-import { RecentUser } from '@/types';
+import { User, RecentUser } from '@/types';
 
 // ─── Avatar helper ────────────────────────────────────────────────────────────
 function Avatar({ src, name, size = 'md' }: { src?: string; name: string; size?: 'sm' | 'md' | 'lg' }) {
