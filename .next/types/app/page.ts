@@ -1,4 +1,4 @@
-// File: C:\FlutterProjects\bahumati-landing-page\app\page.tsx
+// File: /Users/lavin/Documents/All Coding/bahumati-landing-page/app/page.tsx
 import * as entry from '../../../app/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 
