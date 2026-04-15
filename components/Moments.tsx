@@ -37,7 +37,7 @@ export default function Moments() {
             Just Beautiful <span className="text-indigo-600">Wishes</span>
           </h2>
           <p className="text-md text-gray-600 max-w-3xl mx-auto mb-6">
-            Send your love wrapped in value. Gift Top 50 Indian Companies or Gold units. Celebrate meaningfully, anytime, anywhere.
+            Send your love wrapped in value. Gift Top 50 Indian Companies or Digital Gold units. Celebrate Birthdays and Marriages anytime, anywhere.
           </p>
           <p className="font-semibold text-gray-700 mb-4">Soon you can Download on</p>
           <div className="flex justify-center items-center gap-4">

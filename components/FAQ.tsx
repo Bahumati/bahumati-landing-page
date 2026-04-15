@@ -85,13 +85,13 @@ const faqData: FaqData = {
     {
       question: "What types of assets can I gift on Bahumati?",
       answer:
-        "You can gift a variety of digital units, including Gold and units of Top 50 Indian Companies.",
+        "You can gift a variety of digital units, including Digital Gold and units of Top 50 Indian Companies.",
     },
-    {
-      question: "Can I schedule a gift for a birthday or special occasion?",
-      answer:
-        "Yes, our platform allows you to schedule gifts for future dates, ensuring your loved ones receive their surprise on their special day.",
-    },
+    // {
+    //   question: "Can I schedule a gift for a birthday or special occasion?",
+    //   answer:
+    //     "Yes, our platform allows you to schedule gifts for future dates, ensuring your loved ones receive their surprise on their special day.",
+    // },
     {
       question:
         "Will the recipient need a Bahumati account to receive the gift?",
@@ -124,11 +124,11 @@ const faqData: FaqData = {
     },
   ],
   "Security & Services": [
-    {
-      question: "Is Bahumati regulated?",
-      answer:
-        "Yes, Bahumati is a SEBI-registered platform, and we comply with all regulatory guidelines to ensure the safety and security of your investments.",
-    },
+    // {
+    //   question: "Is Bahumati regulated?",
+    //   answer:ß
+    //     "Yes, Bahumati , and we comply with all regulatory guidelines to ensure the safety and security of your investments.",
+    // },
     {
       question: "What kind of customer support do you offer?",
       answer:
@@ -174,11 +174,10 @@ function FAQ() {
                     setActiveCategory(category);
                     setOpenIndex(0);
                   }}
-                  className={`w-full text-left px-6 py-4 rounded-lg font-semibold transition-all duration-300 text-lg shadow-sm ${
-                    activeCategory === category
-                      ? "bg-[#6C63FF] text-white shadow-lg scale-105"
-                      : "bg-white text-gray-700 hover:bg-gray-50 hover:shadow-md"
-                  }`}
+                  className={`w-full text-left px-6 py-4 rounded-lg font-semibold transition-all duration-300 text-lg shadow-sm ${activeCategory === category
+                    ? "bg-[#6C63FF] text-white shadow-lg scale-105"
+                    : "bg-white text-gray-700 hover:bg-gray-50 hover:shadow-md"
+                    }`}
                 >
                   {category}
                 </button>
@@ -205,9 +204,8 @@ function FAQ() {
                         width="20"
                         height="20"
                         fill="currentColor"
-                        className={`transition-transform duration-300 ${
-                          openIndex === index ? "transform rotate-180" : ""
-                        }`}
+                        className={`transition-transform duration-300 ${openIndex === index ? "transform rotate-180" : ""
+                          }`}
                         viewBox="0 0 16 16"
                       >
                         <path
@@ -218,11 +216,10 @@ function FAQ() {
                     </div>
                   </button>
                   <div
-                    className={`transition-all duration-500 ease-in-out grid ${
-                      openIndex === index
-                        ? "grid-rows-[1fr] opacity-100"
-                        : "grid-rows-[0fr] opacity-0"
-                    }`}
+                    className={`transition-all duration-500 ease-in-out grid ${openIndex === index
+                      ? "grid-rows-[1fr] opacity-100"
+                      : "grid-rows-[0fr] opacity-0"
+                      }`}
                   >
                     <div className="overflow-hidden">
                       <div className="px-6 pb-5">

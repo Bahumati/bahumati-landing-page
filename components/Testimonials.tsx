@@ -3,7 +3,7 @@ import React from 'react';
 
 const testimonials = [
   {
-    text: "Never knew gifting gold could be this easy! My sister was so happy receiving it on her birthday. The app made it super smooth and secure.",
+    text: "Never knew gifting Digital Gold could be this easy! My sister was so happy receiving it on her birthday. The app made it super smooth and secure.",
     name: "Aarav Sharma",
     role: "Investor & Bahumati User",
   },
@@ -18,7 +18,7 @@ const testimonials = [
     role: "Investor & Bahumati User",
   },
   {
-    text: "As a new parent, I wanted to invest something valuable for my daughter. Gifting digital gold through Bahumati was the perfect choice.",
+    text: "As a new parent, I wanted to invest something valuable for my daughter. Gifting Digital Gold through Bahumati was the perfect choice.",
     name: "Priya Nair",
     role: "Investor & Bahumati User",
   },
@@ -46,7 +46,7 @@ export default function Testimonials() {
             Hear From Our Community
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Send your love wrapped in value. Gift Gold or mutual fund units app. Celebrate meaningfully, anytime, anywhere.
+            Send your love wrapped in value. Gift Digital Gold or mutual fund units app. Celebrate meaningfully, anytime, anywhere.
           </p>
         </div>
 

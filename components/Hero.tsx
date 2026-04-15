@@ -7,7 +7,7 @@ export default function Hero() {
       <div className="absolute top-8 md:top-8">
         <div className="bg-indigo-100 text-indigo-600 px-4 py-2 rounded-full text-sm font-semibold flex items-center gap-2">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-lightning-charge-fill" viewBox="0 0 16 16">
-            <path d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09z"/>
+            <path d="M11.251.068a.5.5 0 0 1 .227.58L9.677 6.5H13a.5.5 0 0 1 .364.843l-8 8.5a.5.5 0 0 1-.842-.49L6.323 9.5H3a.5.5 0 0 1-.364-.843l8-8.5a.5.5 0 0 1 .615-.09z" />
           </svg>
           Redefining the way India Gifts!
         </div>
@@ -22,7 +22,7 @@ export default function Hero() {
         </h1>
 
         <p className="text-lg md:text-xl text-gray-500 mb-10 max-w-2xl mx-auto">
-          A revolutionary way to gift in India. Send Top 50 Indian Company Units and Gold Units with personalized wishes instantly to your loved ones.
+          A revolutionary way to gift in India. Send Top 50 Indian Company Units and Digital Gold with personalized wishes instantly to your loved ones.
         </p>
 
         {/* CTA Buttons */}
@@ -51,7 +51,7 @@ export default function Hero() {
 
         {/* Subtle social proof line */}
         <p className="mt-6 text-sm text-gray-400">
-          Invest in Gold &amp; Top 50 Indian Companies — gift it to anyone, instantly.
+          Invest in Digital Gold &amp; Top 50 Indian Companies <br /> gift it to anyone, instantly.
         </p>
       </div>
 
